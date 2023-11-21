@@ -1,0 +1,210 @@
+.headerContainer,
+.signUpPageChild {
+  position: absolute;
+  box-sizing: border-box;
+}
+.headerContainer {
+  top: 50px;
+  left: calc(50% - 215px);
+  background-color: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-black);
+  width: 430px;
+  height: 92px;
+}
+.signUpPageChild {
+  top: 160px;
+  left: calc(50% - 200px);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-aliceblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-black);
+  width: 402px;
+  height: 751px;
+}
+.signUp {
+  position: absolute;
+  top: 42px;
+  left: calc(50% - 215px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+  height: 92px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.signUpPageItem {
+  position: absolute;
+  top: 210px;
+  left: 28px;
+  background-color: var(--color-darkseagreen);
+  width: 345px;
+  height: 61px;
+}
+.enterUsername,
+.username {
+  position: absolute;
+  display: flex;
+  width: 296px;
+  height: 63px;
+}
+.username {
+  top: 147px;
+  left: -26px;
+  font-size: var(--font-size-16xl);
+  align-items: flex-end;
+  justify-content: center;
+}
+.enterUsername {
+  top: 208px;
+  left: 34px;
+  color: var(--color-gray-300);
+  text-align: left;
+  align-items: center;
+}
+.signUpPageInner {
+  position: absolute;
+  top: 347px;
+  left: 28px;
+  background-color: var(--color-darkseagreen);
+  width: 345px;
+  height: 61px;
+}
+.email,
+.enterEmail {
+  position: absolute;
+  display: flex;
+  width: 296px;
+  height: 63px;
+}
+.email {
+  top: 284px;
+  left: -68px;
+  align-items: flex-end;
+  justify-content: center;
+}
+.enterEmail {
+  top: 345px;
+  left: 34px;
+  font-size: var(--font-size-16xl);
+  color: var(--color-gray-300);
+  text-align: left;
+  align-items: center;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 484px;
+  left: 28px;
+  background-color: var(--color-darkseagreen);
+  width: 345px;
+  height: 61px;
+}
+.enterPassword,
+.password {
+  position: absolute;
+  display: flex;
+  width: 296px;
+  height: 63px;
+}
+.password {
+  top: 421px;
+  left: -26px;
+  align-items: flex-end;
+  justify-content: center;
+}
+.enterPassword {
+  top: 482px;
+  left: 34px;
+  font-size: var(--font-size-16xl);
+  color: var(--color-gray-300);
+  text-align: left;
+  align-items: center;
+}
+.signUpPageChild1 {
+  position: absolute;
+  top: 622px;
+  left: 28px;
+  background-color: var(--color-darkseagreen);
+  width: 345px;
+  height: 67px;
+}
+.confirmPassword {
+  position: absolute;
+  top: 558px;
+  left: -47px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 458px;
+  height: 63px;
+}
+.confirmPassword1 {
+  position: absolute;
+  top: 602px;
+  left: 31px;
+  font-size: var(--font-size-16xl);
+  color: var(--color-gray-300);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  height: 112px;
+}
+.createAccount,
+.signUpPageChild2 {
+  position: absolute;
+  top: 757px;
+  width: 370px;
+  height: 119px;
+}
+.signUpPageChild2 {
+  left: 34px;
+  background-color: var(--color-dodgerblue);
+}
+.createAccount {
+  left: calc(50% - 185px);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconMenuChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 42.2px;
+  height: 34.2px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 80.91%;
+  width: 89.54%;
+  top: 19.09%;
+  right: 0.2%;
+  bottom: 0;
+  left: 10.26%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.iconMenu {
+  position: absolute;
+  top: 65px;
+  left: 16px;
+  width: 49.7px;
+  height: 46.1px;
+  cursor: pointer;
+}
+.signUpPage {
+  position: relative;
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 932px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-17xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

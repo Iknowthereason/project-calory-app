@@ -1,0 +1,225 @@
+.headerContainer {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-black);
+  box-sizing: border-box;
+  height: 92px;
+}
+.iconMenu {
+  position: absolute;
+  height: 45.76%;
+  width: 11.63%;
+  top: 22.93%;
+  right: 83.74%;
+  bottom: 31.3%;
+  left: 4.63%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  cursor: pointer;
+}
+.caloryIntake1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 215px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+  height: 92px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.frame1 {
+  align-self: stretch;
+  position: relative;
+  height: 92px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-top: -92px;
+}
+.frame {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), linear-gradient(#fefefe, #fefefe),
+    linear-gradient(#fefefe, #fefefe), #fefefe;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 430px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button1Child {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 330px;
+  height: 104px;
+}
+.button1,
+.selectMealEg {
+  position: absolute;
+  height: 96px;
+}
+.selectMealEg {
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 321px;
+  cursor: pointer;
+}
+.button1 {
+  top: 20px;
+  left: 39px;
+  width: 322px;
+}
+.tipsForA {
+  margin: 0;
+}
+.tipsForAContainer {
+  position: absolute;
+  top: 512px;
+  left: 40px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 321px;
+  height: 121px;
+}
+.button2Child,
+.putInThe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 322px;
+  height: 84px;
+}
+.putInThe {
+  top: 1px;
+  left: 3px;
+  display: inline-block;
+  width: 319px;
+  height: 83px;
+  cursor: pointer;
+}
+.button2 {
+  position: absolute;
+  top: 129px;
+  left: 39px;
+  width: 322px;
+  height: 84px;
+  font-size: 32px;
+}
+.submitCaloryIntake {
+  position: absolute;
+  top: 17px;
+  left: calc(50% - 161px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 321px;
+  height: 54px;
+}
+.logOutButton {
+  position: absolute;
+  top: 247px;
+  left: 39px;
+  background-color: var(--color-dodgerblue);
+  width: 322px;
+  height: 86px;
+  color: var(--color-white);
+}
+.showDaysTotal {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  display: inline-block;
+  width: 321px;
+  height: 96px;
+  cursor: pointer;
+}
+.frame4,
+.frame5 {
+  position: absolute;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.frame5 {
+  top: 389px;
+  left: 39px;
+  background-color: var(--color-dodgerblue);
+  width: 322px;
+  height: 96px;
+  color: var(--color-gray-100);
+}
+.frame4 {
+  top: 0;
+  left: calc(50% - 199px);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-aliceblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  height: 636px;
+}
+.frame3,
+.putInThe1 {
+  position: absolute;
+  left: 0;
+}
+.frame3 {
+  top: 55px;
+  width: 402px;
+  height: 636px;
+  overflow: hidden;
+}
+.putInThe1 {
+  top: 0;
+  display: inline-block;
+  width: 359px;
+  height: 48px;
+}
+.frame2,
+.frame6 {
+  position: absolute;
+  overflow: hidden;
+}
+.frame6 {
+  top: 0;
+  left: 13px;
+  width: 376px;
+  height: 48px;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+}
+.frame2 {
+  top: 169px;
+  left: 14px;
+  width: 402px;
+  height: 691px;
+  color: var(--color-gray-300);
+}
+.caloryIntake {
+  position: relative;
+  background-color: var(--color-gray-100);
+  width: 100%;
+  height: 932px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-17xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

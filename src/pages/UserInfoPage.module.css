@@ -1,0 +1,399 @@
+.headerContainer,
+.iconMenuChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 430px;
+  height: 92px;
+}
+.iconMenuChild {
+  width: 39.2px;
+  height: 42.5px;
+}
+.iconMenu1 {
+  position: absolute;
+  height: 85.87%;
+  width: 71.4%;
+  top: 14.13%;
+  right: 0;
+  bottom: 0;
+  left: 28.6%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.iconMenu {
+  position: absolute;
+  top: 18px;
+  left: 6px;
+  width: 50px;
+  height: 46px;
+  cursor: pointer;
+}
+.header {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 430px;
+  height: 92px;
+}
+.bodyContainer,
+.containerBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.bodyContainer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-black);
+  width: 430px;
+  height: 790px;
+}
+.containerBox {
+  border-radius: var(--br-3xs);
+  background-color: #f4f9fe;
+  border: 1px solid var(--color-black);
+  width: 400px;
+  height: 633.9px;
+}
+.ageInputChild,
+.enterAge {
+  top: 29.2px;
+  left: 0;
+  width: 354.8px;
+  height: 49.8px;
+}
+.ageInputChild {
+  position: absolute;
+  background-color: var(--color-darkseagreen);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.enterAge {
+  display: flex;
+  align-items: center;
+}
+.age,
+.ageInput,
+.enterAge {
+  position: absolute;
+}
+.age {
+  top: 0;
+  left: 1.1px;
+  color: var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  width: 354.8px;
+  height: 29.2px;
+}
+.ageInput {
+  top: 19.8px;
+  left: 24.1px;
+  width: 355.9px;
+  height: 79px;
+}
+.enterHeight,
+.heightInputChild {
+  position: absolute;
+  top: 35.7px;
+  left: 0;
+  width: 354.8px;
+  height: 49.8px;
+}
+.heightInputChild {
+  background-color: var(--color-darkseagreen);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.enterHeight {
+  display: flex;
+  align-items: center;
+}
+.heightInput {
+  position: absolute;
+  top: 111.9px;
+  left: 25.2px;
+  width: 355.9px;
+  height: 85.6px;
+}
+.enterWeight,
+.weight,
+.weightInputChild {
+  position: absolute;
+  top: 32.9px;
+  left: 0;
+  height: 49.8px;
+}
+.weightInputChild {
+  background-color: var(--color-darkseagreen);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 354.8px;
+}
+.enterWeight,
+.weight {
+  display: flex;
+  align-items: center;
+  width: 352.6px;
+}
+.weight {
+  top: 0;
+  color: var(--color-gray-200);
+  width: 354.8px;
+  height: 29.2px;
+}
+.doYouHave,
+.weightInput {
+  position: absolute;
+  top: 213.5px;
+  left: 24.1px;
+  width: 354.8px;
+  height: 82.8px;
+}
+.doYouHave {
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.9);
+  display: inline-block;
+  height: 102.5px;
+}
+.noOptionChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 22px;
+}
+.no,
+.noOption,
+.noOptionChild,
+.yesOption {
+  position: absolute;
+  height: 18.8px;
+}
+.no {
+  top: 0;
+  left: 30.9px;
+  display: inline-block;
+  width: 66.1px;
+}
+.noOption,
+.yesOption {
+  top: 32.9px;
+  left: 2.7px;
+  width: 97px;
+}
+.yesOption {
+  top: 63px;
+}
+.activityLevelInput {
+  position: absolute;
+  top: 541.7px;
+  left: 26.3px;
+  width: 354.8px;
+  height: 102.5px;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+}
+.lowButtonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: #7bcbee;
+  width: 354.8px;
+  height: 50.3px;
+}
+.low,
+.lowButton {
+  position: absolute;
+  width: 355.9px;
+}
+.low {
+  top: 0.5px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 49.8px;
+}
+.lowButton {
+  top: 38.6px;
+  left: 3px;
+  height: 50.3px;
+}
+.medium,
+.mediumButtonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 354.8px;
+}
+.mediumButtonChild {
+  border-radius: var(--br-3xs);
+  background-color: #faf460;
+  height: 50.3px;
+}
+.medium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 49.8px;
+}
+.highButtonChild,
+.mediumButton {
+  position: absolute;
+  top: 103.5px;
+  left: 4px;
+  width: 354.8px;
+  height: 50.3px;
+}
+.highButtonChild {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: #f04242;
+}
+.high {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 354px;
+  height: 49.8px;
+}
+.highButton {
+  position: absolute;
+  top: 169.3px;
+  left: 3px;
+  width: 355px;
+  height: 50.3px;
+}
+.selectActivityLevel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-3xl);
+  color: var(--color-gray-200);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 354.8px;
+  height: 29.2px;
+}
+.activityLevelInput1 {
+  position: absolute;
+  top: 311.3px;
+  left: 23px;
+  width: 358.9px;
+  height: 219.5px;
+  text-align: center;
+  font-size: var(--font-size-17xl);
+}
+.container {
+  position: absolute;
+  top: 133.5px;
+  left: 15px;
+  width: 400px;
+  height: 644.2px;
+  color: var(--color-gray-300);
+}
+.userInformation {
+  position: absolute;
+  top: 18.8px;
+  left: 34px;
+  font-size: var(--font-size-11xl);
+  display: inline-block;
+  width: 247px;
+  height: 78.1px;
+}
+.unitsSelectorChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 120px;
+  height: 32.9px;
+}
+.unitsSelectorItem {
+  position: absolute;
+  top: 0.9px;
+  left: 1px;
+  border-radius: var(--br-xl) 0 0 var(--br-xl);
+  background-color: #77e5fd;
+  width: 59px;
+  height: 31px;
+}
+.imperial {
+  top: 0;
+  left: 60px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+}
+.imperial,
+.metric,
+.unitsSelector {
+  position: absolute;
+  height: 32.9px;
+}
+.metric {
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+}
+.unitsSelector {
+  top: 95.9px;
+  left: 277px;
+  width: 120px;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+}
+.body,
+.userInformation1 {
+  position: absolute;
+  width: 430px;
+}
+.body {
+  top: 142px;
+  left: 0;
+  height: 790px;
+}
+.userInformation1 {
+  top: 48px;
+  left: calc(50% - 215px);
+  font-size: var(--font-size-17xl);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.userInfoPage {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 932px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

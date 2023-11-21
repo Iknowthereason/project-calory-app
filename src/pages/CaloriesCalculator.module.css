@@ -1,0 +1,164 @@
+.headerContainer {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 430px;
+  height: 92px;
+}
+.caloriesCalculatorChild {
+  position: absolute;
+  top: 236px;
+  left: calc(50% - 200px);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-aliceblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 402px;
+  height: 679px;
+}
+.calculator {
+  position: absolute;
+  top: 48px;
+  left: calc(50% - 215px);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+  height: 92px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.showCaloriesIntakeButtonChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkseagreen);
+}
+.showCaloriesIntakeButton,
+.showCaloriesIntakeButtonChild,
+.showDaysTotal {
+  position: absolute;
+  width: 350px;
+  height: 102.8px;
+}
+.showDaysTotal {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.showCaloriesIntakeButton {
+  top: 311.3px;
+  left: 39px;
+}
+.intakeConsumption,
+.intakeConsumptiopionDifferenChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 130px;
+}
+.intakeConsumptiopionDifferenChild {
+  background-color: var(--color-darkseagreen);
+}
+.intakeConsumption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconClose {
+  position: absolute;
+  height: 3.09%;
+  width: 6.43%;
+  top: 181.94%;
+  right: -10.46%;
+  bottom: -85.03%;
+  left: 104.02%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.intakeConsumptiopionDifferen {
+  position: absolute;
+  top: 701.3px;
+  left: 39px;
+  width: 373px;
+  height: 824.9px;
+  cursor: pointer;
+}
+.showBurnedCalories {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 102.8px;
+}
+.showBurnedCaloriesButton {
+  position: absolute;
+  top: 509.2px;
+  left: 39px;
+  width: 350px;
+  height: 102.8px;
+  cursor: pointer;
+}
+.userInformation {
+  position: absolute;
+  top: 157px;
+  left: 17px;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 247px;
+  height: 80px;
+}
+.iconMenuChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 37.7px;
+  height: 34.2px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 80.87%;
+  width: 80%;
+  top: 19.13%;
+  right: 0;
+  bottom: 0;
+  left: 20%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.iconMenu {
+  position: absolute;
+  top: 68px;
+  left: 6px;
+  width: 50px;
+  height: 46px;
+  cursor: pointer;
+}
+.caloriesCalculator {
+  position: relative;
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 932px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-17xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-inter);
+}

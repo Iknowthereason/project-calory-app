@@ -1,0 +1,38 @@
+.submittedCaloriesChild,
+.youHaveSubmitted {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 430px;
+  height: 177px;
+}
+.submittedCaloriesChild {
+  background-color: var(--color-gainsboro);
+}
+.youHaveSubmitted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconClose {
+  position: absolute;
+  height: 14.86%;
+  width: 5.58%;
+  top: 12.43%;
+  right: 5.35%;
+  bottom: 72.71%;
+  left: 89.07%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.submittedCalories {
+  background-color: var(--color-white);
+  width: 430px;
+  height: 177px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

@@ -1,0 +1,183 @@
+.navigationMenuChild {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background-color: var(--color-aliceblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 252px;
+  height: 933px;
+}
+.navigationMenuItem {
+  top: 192px;
+  background-color: var(--color-darkseagreen);
+  cursor: pointer;
+}
+.caloryIntake,
+.navigationMenuInner,
+.navigationMenuItem,
+.rectangleDiv {
+  position: absolute;
+  left: 13px;
+  width: 221px;
+  height: 62px;
+}
+.caloryIntake {
+  top: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.navigationMenuInner,
+.rectangleDiv {
+  background-color: var(--color-darkseagreen);
+}
+.navigationMenuInner {
+  top: 379px;
+  cursor: pointer;
+}
+.rectangleDiv {
+  top: 287px;
+}
+.calculator,
+.excercisePage {
+  position: absolute;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 221px;
+}
+.excercisePage {
+  top: 287px;
+  color: #49684c;
+  height: 62px;
+  cursor: pointer;
+}
+.calculator {
+  top: 379px;
+  font-weight: 800;
+  height: 63px;
+}
+.logOutButtonChild {
+  position: absolute;
+  top: 0;
+  left: 21.4px;
+  background-color: var(--color-dodgerblue);
+  width: 179.6px;
+  height: 63px;
+}
+.logOut,
+.logOutButton {
+  position: absolute;
+  width: 221px;
+  height: 63px;
+}
+.logOut {
+  top: 0;
+  left: calc(50% - 110.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logOutButton {
+  top: 820px;
+  left: 15px;
+  cursor: pointer;
+  font-size: var(--font-size-17xl);
+  color: var(--color-white);
+}
+.userInformationButtonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkseagreen);
+  width: 221px;
+  height: 62px;
+}
+.userInformationButton {
+  position: absolute;
+  top: 473px;
+  left: 13px;
+  width: 221px;
+  height: 62px;
+  cursor: pointer;
+}
+.headerContainer,
+.menu {
+  position: absolute;
+  left: calc(50% - 125px);
+  width: 250px;
+}
+.headerContainer {
+  top: 27px;
+  background-color: var(--color-gray-100);
+  border-bottom: 1px solid var(--color-black);
+  box-sizing: border-box;
+  height: 92px;
+}
+.menu {
+  top: 43px;
+  font-size: 26px;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px #000;
+}
+.iconMenuChild {
+  position: absolute;
+  top: 0;
+  left: 0.4px;
+  background-color: var(--color-gray-100);
+  width: 38.6px;
+  height: 24.6px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 90.91%;
+  width: 76.92%;
+  top: 9.09%;
+  right: 23.08%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.iconMenu,
+.userInformation {
+  position: absolute;
+  top: 59px;
+  left: 22px;
+  width: 39px;
+  height: 33px;
+}
+.userInformation {
+  top: 473px;
+  left: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 221px;
+  height: 62px;
+  cursor: pointer;
+}
+.navigationMenu {
+  background-color: #e4ece0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 932px;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-gray-300);
+  font-family: var(--font-inter);
+}

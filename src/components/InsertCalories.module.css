@@ -1,0 +1,101 @@
+.caloriesInputChild,
+.insertCaloriesChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 430px;
+  height: 245px;
+}
+.caloriesInputChild {
+  top: 57px;
+  background-color: var(--color-darkseagreen);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 382.8px;
+  height: 53px;
+}
+.insertTotalAmount {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  height: 57px;
+}
+.caloriesInput,
+.footerChild {
+  position: absolute;
+  top: 63px;
+  left: 24px;
+  width: 383px;
+  height: 110px;
+}
+.footerChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-300);
+  box-sizing: border-box;
+  width: 430px;
+  height: 67.3px;
+}
+.cancel {
+  top: 0;
+  left: 234px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 67.3px;
+}
+.cancel,
+.footer,
+.ok {
+  position: absolute;
+}
+.ok {
+  top: 0;
+  left: 334px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 65.4px;
+}
+.footer {
+  top: 202px;
+  left: 0;
+  width: 430px;
+  height: 67.3px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-cornflowerblue);
+}
+.iconClose,
+.insertCalories {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+}
+.iconClose {
+  position: absolute;
+  height: 9.56%;
+  width: 5.57%;
+  top: 5.09%;
+  right: 2.78%;
+  bottom: 85.35%;
+  left: 91.65%;
+}
+.insertCalories {
+  background-color: var(--color-white);
+  width: 431px;
+  height: 275px;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
