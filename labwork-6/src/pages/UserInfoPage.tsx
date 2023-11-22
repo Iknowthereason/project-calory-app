@@ -17,7 +17,7 @@ const UserInfoPage: FunctionComponent = () => {
         <IonHeader>
           <IonToolbar>
             <IonTitle>User Information</IonTitle>
-          </IonToolbar> 
+          </IonToolbar>
         </IonHeader>
         <IonContent>
           <IonText>
@@ -54,42 +54,42 @@ const UserInfoPage: FunctionComponent = () => {
                   <IonCol color="background-color">
                     <IonInput className="input" labelPlacement="stacked" fill="outline" label="Weight" placeholder="Enter Weight"></IonInput>
                   </IonCol >
-                </IonRow>          
-                  <IonRow>
-                    <IonCol>
-                      <IonText>
-                        <p>Select activity level</p>
-                      </IonText>
-                    </IonCol>
-                  </IonRow>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton expand="block" fill="solid" shape="round" color="light-blue">Low</IonButton>
-                    </IonCol>
-                  </IonRow>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton expand="block" fill="solid" shape="round" color="light-yellow">Medium</IonButton>
-                    </IonCol>
-                  </IonRow>
-                  <IonRow>
-                    <IonCol>
-                      <IonButton expand="block" fill="solid" shape="round" color="red">High</IonButton>
-                    </IonCol>
-                  </IonRow>
-                  <IonRow>
-                    <IonCol>
-                      <IonText>
-                        <p>Do you have any medical problems?</p>
-                      </IonText>
-                      <IonRadioGroup>
-                        <IonRadio labelPlacement="end">Yes</IonRadio>
-                        <br />
-                        <IonRadio labelPlacement="end">No</IonRadio> 
-                      </IonRadioGroup>
-                    </IonCol>
-                  </IonRow>
-              </IonGrid>              
+                </IonRow>
+                <IonRow>
+                  <IonCol>
+                    <IonText>
+                      <p>Select activity level</p>
+                    </IonText>
+                  </IonCol>
+                </IonRow>
+                <IonRow>
+                  <IonCol>
+                    <IonButton expand="block" fill="solid" shape="round" color="light-blue">Low</IonButton>
+                  </IonCol>
+                </IonRow>
+                <IonRow>
+                  <IonCol>
+                    <IonButton expand="block" fill="solid" shape="round" color="light-yellow">Medium</IonButton>
+                  </IonCol>
+                </IonRow>
+                <IonRow>
+                  <IonCol>
+                    <IonButton expand="block" fill="solid" shape="round" color="red">High</IonButton>
+                  </IonCol>
+                </IonRow>
+                <IonRow>
+                  <IonCol>
+                    <IonText>
+                      <p>Do you have any medical problems?</p>
+                    </IonText>
+                    <IonRadioGroup>
+                      <IonRadio labelPlacement="end">Yes</IonRadio>
+                      <br />
+                      <IonRadio labelPlacement="end">No</IonRadio>
+                    </IonRadioGroup>
+                  </IonCol>
+                </IonRow>
+              </IonGrid>
             </IonCardContent>
           </IonCard>
           <IonGrid>

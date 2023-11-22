@@ -4,6 +4,7 @@ import {
   IonIcon,
   IonLabel,
   IonRouterOutlet,
+  IonSplitPane,
   IonTabBar,
   IonTabButton,
   IonTabs,
@@ -11,7 +12,8 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
-
+import Calculator from './pages/Calculator';
+import SideMenu from './components/SideMenu';
 import UserInfoPage from './pages/UserInfoPage';
 
 /* Core CSS required for Ionic components to work properly  */
@@ -40,12 +42,13 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/tab1">
-          <UserInfoPage />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/tab1" />
-        </Route>
+        <IonSplitPane contentId="main">
+          <SideMenu />
+          <IonRouterOutlet id="main">
+            <Route path="/calculator" component={Calculator} exact />
+            <Route path="/user-info" component={UserInfoPage} exact />
+          </IonRouterOutlet>
+        </IonSplitPane>
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
