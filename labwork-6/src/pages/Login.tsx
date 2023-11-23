@@ -1,6 +1,6 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar, useIonRouter, useIonToast,IonCard,IonCardContent,IonText, IonCol, IonGrid, IonRow, IonLoading, } from '@ionic/react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Route, Router } from 'react-router-dom';
 import { loginUser } from '../firebaseConfig';
 import { toast } from '../toast'
 
@@ -9,18 +9,21 @@ const Login: React.FC = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [toast] = useIonToast()
+    const router = useIonRouter();
 
-    const navigation = useIonRouter()
-
+    //Fix the loging page by centering it and fix the login to send registration to the database
     async function login() {
         setBusy(true)
         
         const res = await loginUser(username, password)
-
-        if (!res) {
-            toast('You have logged in!')
-            navigation.push('/app', 'root', 'replace')
-            navigation.push('/app/homepage')
+    
+        if (res) {
+            toast('You have logged in!', 3000); // Set duration to 3000 milliseconds (3 seconds)
+            router.push('/app', 'root', 'replace')
+            router.push('/app/login')
+            router.push('/login', 'root', 'replace')
+        } else {
+            toast('Wrong user information. Don\'t have an account?')
         }
         setBusy(false)
     }
@@ -43,7 +46,7 @@ const Login: React.FC = () => {
                             <IonInput className= "input" labelPlacement="stacked" fill="outline" label="Username" placeholder="Enter Username" onIonChange={(e: any) => setUsername(e.target.value)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} />
                             <IonInput className= "input" labelPlacement="stacked" fill="outline" label="Password" type="password" placeholder="Enter Password" onIonChange={(e: any) => setPassword(e.target.value)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} />
                             <IonButton onClick={login} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Log in</IonButton>
-                            <IonText><p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Don't Have an Account?&nbsp;<Link to="/register">Sign-up</Link></p></IonText>
+                            <IonText><p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Don't Have an Account? <Link to="/register">Sign up</Link></p></IonText>
                             </IonCol>
                         </IonRow>
                     </IonGrid>
