@@ -3,6 +3,7 @@ import { Link, Redirect, Route } from 'react-router-dom';
 import { loginUser as login, registerUser as register } from './firebaseConfig'; // Update the path to firebaseConfig
 import { toast } from './toast';
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 const config = {
     apiKey: "AIzaSyD9t8s1SDbrKtNmQPpjJoXoM7rcCwTTx5k",
