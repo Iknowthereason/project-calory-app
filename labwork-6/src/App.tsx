@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Router, Route, Redirect } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -15,6 +15,8 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Calculator from './pages/Calculator';
 import SideMenu from './components/SideMenu';
 import UserInfoPage from './pages/UserInfoPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 /* Core CSS required for Ionic components to work properly  */
 import '@ionic/react/css/core.css';
@@ -45,6 +47,8 @@ const App: React.FC = () => (
         <IonSplitPane contentId="main">
           <SideMenu />
           <IonRouterOutlet id="main">
+            <Route path="/login" component={Login} exact />
+            <Redirect from="/" to="/login" exact />
             <Route path="/calculator" component={Calculator} exact />
             <Route path="/user-info" component={UserInfoPage} exact />
           </IonRouterOutlet>
