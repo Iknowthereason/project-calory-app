@@ -15,6 +15,7 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Calculator from './pages/Calculator';
 import SideMenu from './components/SideMenu';
 import UserInfoPage from './pages/UserInfoPage';
+import ExcercisePage from './pages/ExcercisePage';
 
 /* Core CSS required for Ionic components to work properly  */
 import '@ionic/react/css/core.css';
@@ -36,6 +37,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -47,6 +49,7 @@ const App: React.FC = () => (
           <IonRouterOutlet id="main">
             <Route path="/calculator" component={Calculator} exact />
             <Route path="/user-info" component={UserInfoPage} exact />
+            <Route path="/exercise-page" component={ExcercisePage} exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonRouterOutlet>
