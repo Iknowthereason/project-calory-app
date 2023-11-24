@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useCallback } from "react";
-import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonInput, IonCol, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton } from "@ionic/react";
+import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonInput, IonCol, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton } from "@ionic/react";
 const UserInfoPage: FunctionComponent = () => {
   const [isNavigationMenuOpen, setNavigationMenuOpen] = useState(false);
 
@@ -16,6 +16,9 @@ const UserInfoPage: FunctionComponent = () => {
       <IonPage>
         <IonHeader>
           <IonToolbar>
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
             <IonTitle>User Information</IonTitle>
           </IonToolbar>
         </IonHeader>
