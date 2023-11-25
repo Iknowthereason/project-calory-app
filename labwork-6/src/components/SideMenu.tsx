@@ -45,7 +45,7 @@ const SideMenu: React.FC = () => (
         </IonList>
       </IonCardContent>
       <IonCardContent className="bodyContainer">
-        <IonItem button routerLink="/" color="primary">
+        <IonItem button routerLink="/login" color="primary">
           Log Out
         </IonItem>
       </IonCardContent>
