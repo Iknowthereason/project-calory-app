@@ -1,16 +1,35 @@
-import { FunctionComponent, useState, useCallback } from "react";
+import { FunctionComponent, useState, useCallback, MouseEvent } from "react";
 import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonInput, IonCol, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton } from "@ionic/react";
 const UserInfoPage: FunctionComponent = () => {
-  const [isNavigationMenuOpen, setNavigationMenuOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState<IUserInfoState>({ age: "", height: "", weight: "", activityLevel: "", medicalProblems: false })
+  const [units, setUnits] = useState<string>("metric")
+  
 
-  const openNavigationMenu = useCallback(() => {
-    setNavigationMenuOpen(true);
-  }, []);
+  interface IUserInfoState {
+    age: String
+    height: String
+    weight: String
+    activityLevel: "low" | "medium" | "high" | ""
+    medicalProblems: Boolean
 
-  const closeNavigationMenu = useCallback(() => {
-    setNavigationMenuOpen(false);
-  }, []);
+  }
+    
+  const handleUnitChange = (event: MouseEvent<HTMLIonSegmentButtonElement, globalThis.MouseEvent>) => {
+    setUnits((event.target as HTMLInputElement).value)
+  }
 
+  const handleChange = (event: any) => {
+    if (units === "imperial") {
+
+    }
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
+    console.log(event)
+  }
+
+  const handleActivityLevelChange = (event: any) => {
+    setUserInfo({ ...userInfo, activityLevel: event.target.value})
+  }
+  
   return (
     <>
       <IonPage>
@@ -23,17 +42,19 @@ const UserInfoPage: FunctionComponent = () => {
           </IonToolbar>
         </IonHeader>
         <IonContent>
-          <IonText>
-            <h4>Please fill in the<br></br>user information</h4>
-          </IonText>
+          <IonLabel>
+            <h1 style={{ margin: "10px" }}>Please fill in the user information</h1></IonLabel>
+   {/*        <IonText>
+            <h4>Please fill in the user information</h4>
+          </IonText> */}
           <IonGrid>
             <IonRow class="ion-justify-content-center">
               <IonCol size="6">
-                <IonSegment value="metric">
-                  <IonSegmentButton className="units-toggle" value="metric">
+                <IonSegment value={units}>
+                  <IonSegmentButton className="units-toggle" value="metric" onClick={handleUnitChange}>
                     <IonLabel>Metric</IonLabel>
                   </IonSegmentButton>
-                  <IonSegmentButton className="units-toggle">
+                  <IonSegmentButton className="units-toggle" value="imperial" onClick={handleUnitChange}>
                     <IonLabel>Imperial</IonLabel>
                   </IonSegmentButton>
                 </IonSegment>
@@ -45,19 +66,103 @@ const UserInfoPage: FunctionComponent = () => {
               <IonGrid>
                 <IonRow>
                   <IonCol color="background-color">
-                    <IonInput className="input" labelPlacement="stacked" fill="outline" label="Age" placeholder="Enter Age"></IonInput>
+                    <IonLabel>Age</IonLabel>
+                    <IonInput
+                      type="number"
+                      className="input"
+                      labelPlacement="stacked"
+                      fill="outline"
+                      placeholder="Enter Age"
+                      value={userInfo.age.toString()}
+                      onIonChange={handleChange}
+                      name="age"
+                    ></IonInput>
                   </IonCol>
                 </IonRow>
-                <IonRow>
-                  <IonCol color="background-color">
-                    <IonInput className="input" labelPlacement="stacked" fill="outline" label="Height" placeholder="Enter Height"></IonInput>
-                  </IonCol>
-                </IonRow>
-                <IonRow>
-                  <IonCol color="background-color">
-                    <IonInput className="input" labelPlacement="stacked" fill="outline" label="Weight" placeholder="Enter Weight"></IonInput>
-                  </IonCol >
-                </IonRow>
+                {units === "metric" ?
+                <div>
+                  <IonRow>
+                    <IonCol color="background-color">
+                      <IonLabel>Height (cm)</IonLabel>
+                      <IonInput
+                        type="number"
+                        className="input" 
+                        labelPlacement="stacked" 
+                        fill="outline" 
+                        placeholder="Enter Height"
+                        value={userInfo.height.toString()}
+                        onIonChange={handleChange}
+                        name="height">
+                      </IonInput>
+                    </IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol color="background-color">
+                      <IonLabel>Weight (kg)</IonLabel>
+                        <IonInput
+                          type="number" 
+                          className="input" 
+                          labelPlacement="stacked" 
+                          fill="outline"  
+                          placeholder="Enter Weight"
+                          value={userInfo.weight.toString()}
+                          onIonChange={handleChange}
+                          name="weight">
+                      </IonInput>
+                    </IonCol >
+                  </IonRow>
+                  </div>
+                  :
+                  <div>
+                  <IonRow>
+                    <IonRow>
+                      <IonLabel>&nbsp;Height</IonLabel>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol color="background-color">
+                        <IonInput
+                          type="number"
+                          className="input" 
+                          labelPlacement="stacked" 
+                          fill="outline" 
+                          label="Feet" 
+                          placeholder="Enter feet"
+                          value={userInfo.height.toString()}
+                          onIonChange={handleChange}
+                          name="height"></IonInput>
+                      </IonCol>
+                      <IonCol color="background-color">
+                        <IonInput
+                        type="number"
+                        className="input" 
+                        labelPlacement="stacked" 
+                        fill="outline" 
+                        label="Inches" 
+                        placeholder="Enter inches"
+                        value={userInfo.height.toString()}
+                        onIonChange={handleChange}
+                        name="height"></IonInput>
+                      </IonCol>
+                    </IonRow>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol color="background-color">
+                      <IonLabel>Weight (lb)</IonLabel>
+                        <IonInput
+                          type="number" 
+                          className="input" 
+                          labelPlacement="stacked" 
+                          fill="outline"  
+                          placeholder="Enter Weight"
+                          value={userInfo.weight.toString()}
+                          onIonChange={handleChange}
+                          name="weight">
+                      </IonInput>
+                    </IonCol >
+                  </IonRow>
+                </div>
+                }
+               
                 <IonRow>
                   <IonCol>
                     <IonText>
@@ -65,30 +170,32 @@ const UserInfoPage: FunctionComponent = () => {
                     </IonText>
                   </IonCol>
                 </IonRow>
-                <IonRow>
-                  <IonCol>
-                    <IonButton expand="block" fill="solid" shape="round" color="light-blue">Low</IonButton>
-                  </IonCol>
-                </IonRow>
-                <IonRow>
-                  <IonCol>
-                    <IonButton expand="block" fill="solid" shape="round" color="light-yellow">Medium</IonButton>
-                  </IonCol>
-                </IonRow>
-                <IonRow>
-                  <IonCol>
-                    <IonButton expand="block" fill="solid" shape="round" color="red">High</IonButton>
-                  </IonCol>
-                </IonRow>
+                <IonSegment value={userInfo.activityLevel}>
+                  <IonRow>
+                    <IonCol>
+                      <IonSegmentButton className="activityLevelButton-low" value="low" onClick={handleActivityLevelChange}>Low</IonSegmentButton>
+                    </IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol>
+                      <IonSegmentButton className="activityLevelButton-medium" value="medium" onClick={handleActivityLevelChange}>Medium</IonSegmentButton>
+                    </IonCol>
+                  </IonRow>
+                  <IonRow>
+                    <IonCol>
+                      <IonSegmentButton className="activityLevelButton-high" value="high" onClick={handleActivityLevelChange}>High</IonSegmentButton>
+                    </IonCol>
+                  </IonRow>
+                </IonSegment>
                 <IonRow>
                   <IonCol>
                     <IonText>
                       <p>Do you have any medical problems?</p>
                     </IonText>
-                    <IonRadioGroup>
-                      <IonRadio labelPlacement="end">Yes</IonRadio>
+                    <IonRadioGroup value={userInfo.medicalProblems}>
+                      <IonRadio labelPlacement="end" name="medicalProblems" value={true} onClick={handleChange}>Yes</IonRadio>
                       <br />
-                      <IonRadio labelPlacement="end">No</IonRadio>
+                      <IonRadio labelPlacement="end" name="medicalProblems" value={false} onClick={handleChange}>No</IonRadio>
                     </IonRadioGroup>
                   </IonCol>
                 </IonRow>
