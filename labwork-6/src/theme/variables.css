@@ -166,6 +166,24 @@ http://ionicframework.com/docs/theming/ */
   
 }
 
+.activityLevelButton-low {
+  background-color: #7BCBEE;
+  border-radius: 20px;
+  color:#000000;
+}
+
+.activityLevelButton-medium {
+  background-color: #FAF460;
+  border-radius: 20px;
+  color:#000000;
+}
+
+.activityLevelButton-high {
+  background-color: #F04141;
+  border-radius: 20px;
+  color:#000000;
+}
+
 
 @media (prefers-color-scheme: dark) {
   /*
