@@ -1,4 +1,5 @@
 import { Router, Route, Redirect } from 'react-router-dom';
+import { useState } from 'react';
 import {
   IonApp,
   IonIcon,
@@ -10,6 +11,7 @@ import {
   IonTabs,
   setupIonicReact
 } from '@ionic/react';
+import { ICaloriesState, IUserState } from './interfaces/interfaces'
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Calculator from './pages/Calculator';
@@ -42,27 +44,33 @@ import './theme/variables.css';
 
 
 
+
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <IonSplitPane contentId="main">
-          <SideMenu />
-          <IonRouterOutlet id="main">
-            <Route path="/login" component={Login} exact />
-            <Redirect from="/" to="/login" exact />
-            <Route path="/register" component={Register} exact />
-            <Route path="/exercise-page" component={ExercisePage} exact />
-            <Route path="/calculator" component={Calculator} exact />
-            <Route path="/user-info" component={UserInfoPage} exact />
-           
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () =>  {
+  const [user, setUser] = useState<IUserState>({ age: "", height: "", weight:"", activityLevel: "", medicalProblems: true })
+  const [calories, setCalories] = useState<number>(0)
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <IonSplitPane contentId="main">
+            <SideMenu />
+            <IonRouterOutlet id="main">
+              <Route path="/login" component={Login} exact />
+              <Redirect from="/" to="/login" exact />
+              <Route path="/register" component={Register} exact />
+              <Route path="/exercise-page" render={()=><ExercisePage user={user} setCalories={setCalories}/>} exact />
+              <Route path="/calculator" component={Calculator} exact />
+              <Route exact path="/user-info" render={()=><UserInfoPage user={user} setUser={setUser}/>} />
+            
+            </IonRouterOutlet>
+          </IonSplitPane>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+}
 
 export default App;
