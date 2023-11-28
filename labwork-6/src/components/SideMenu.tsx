@@ -30,7 +30,7 @@ const SideMenu: React.FC = () => (
     <IonContent>
       <IonCardContent className="bodyContainer">
         <IonList color="success">
-          <IonItem button routerLink="/calory-intake" color="success">
+          <IonItem button routerLink="/intake" color="success">
             Calory Intake
           </IonItem>
           <IonItem button routerLink="/exercise-page" color="success">

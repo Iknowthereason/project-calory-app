@@ -20,7 +20,7 @@ import UserInfoPage from './pages/UserInfoPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ExercisePage from './pages/ExercisePage';
-
+import Intake from './pages/Intake';
 
 /* Core CSS required for Ionic components to work properly  */
 import '@ionic/react/css/core.css';
@@ -42,9 +42,6 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 
-
-
-
 setupIonicReact();
 
 const App: React.FC = () =>  {
@@ -64,6 +61,7 @@ const App: React.FC = () =>  {
               <Route path="/exercise-page" render={()=><ExercisePage user={user} setCalories={setCalories}/>} exact />
               <Route path="/calculator" component={Calculator} exact />
               <Route exact path="/user-info" render={()=><UserInfoPage user={user} setUser={setUser}/>} />
+              <Route path="/intake" component={Intake} exact />
             
             </IonRouterOutlet>
           </IonSplitPane>
