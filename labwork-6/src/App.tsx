@@ -17,8 +17,8 @@ import SideMenu from './components/SideMenu';
 import UserInfoPage from './pages/UserInfoPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import ExercisePage from './pages/ExercisePage';
-
+// import ExercisePage from './pages/ExercisePage';
+import Intake from './pages/Intake';
 
 /* Core CSS required for Ionic components to work properly  */
 import '@ionic/react/css/core.css';
@@ -54,9 +54,10 @@ const App: React.FC = () => (
             <Route path="/login" component={Login} exact />
             <Redirect from="/" to="/login" exact />
             <Route path="/register" component={Register} exact />
-            <Route path="/exercise-page" component={ExercisePage} exact />
+            {/* <Route path="/exercise-page" component={ExercisePage} exact /> */}
             <Route path="/calculator" component={Calculator} exact />
             <Route path="/user-info" component={UserInfoPage} exact />
+            <Route path="/intake" component={Intake} exact />
            
           </IonRouterOutlet>
         </IonSplitPane>
