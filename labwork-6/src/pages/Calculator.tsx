@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-  IonToast,
-  IonMenuToggle,
-  IonCardContent,
-  IonIcon,
-} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonToast, IonMenuToggle, IonCardContent, IonIcon,} from '@ionic/react';
 import { menuOutline } from 'ionicons/icons';
 
 

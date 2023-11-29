@@ -1,22 +1,5 @@
-import React, { useState } from 'react';
-import {
-  IonContent,
-  IonPage,
-  IonSelect,
-  IonSelectOption,
-  IonInput,
-  IonLabel,
-  IonButton,
-  IonCardContent,
-  IonItem,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonList,
-  IonItemSliding,
-  IonItemOptions,
-  IonItemOption,
-} from '@ionic/react';
+import { useEffect, useState } from "react";
+import {IonContent, IonPage, IonSelect, IonSelectOption, IonInput, IonLabel, IonButton, IonCardContent, IonItem, IonHeader, IonToolbar, IonTitle, IonList, IonItemSliding, IonItemOptions, IonItemOption} from '@ionic/react';
 
 interface Meal {
   id: number;
