@@ -114,6 +114,3 @@ const Intake: React.FC = () => {
 };
 
 export default Intake;
-
-
-
