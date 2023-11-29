@@ -18,13 +18,13 @@ import {
   IonItemOption,
 } from '@ionic/react';
 
-interface Meal {
+export interface Meal {
   id: number;
   mealTime: string;
   calories: number;
 }
 
-const Intake: React.FC = () => {
+export const Intake: React.FC = () => {
   const [mealTime, setMealTime] = useState<string>('');
   const [calories, setCalories] = useState<number | undefined>();
   const [meals, setMeals] = useState<Meal[]>([]);

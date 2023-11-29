@@ -12,36 +12,40 @@ import {
   IonIcon,
 } from '@ionic/react';
 import { menuOutline } from 'ionicons/icons';
+import { IIntensityState} from "../interfaces/interfaces";
+import {Meal} from "../pages/Intake";
+ 
 
-interface CalculatorProps {
-  totalIntake: number;
-  workoutLevel: string;
-}
-
-const Calculator: React.FC<CalculatorProps> = ({ totalIntake, workoutLevel }) => {
+const Calculator: React.FC<IIntensityState & Meal> = ({ intensity, calories }) => {
   let burnedCalories: number;
-  switch (workoutLevel) {
-    case 'LOW':
+  switch (intensity) {
+    case "low":
       burnedCalories = 500;
       break;
-    case 'MEDIUM':
+    case "medium":
       burnedCalories = 700;
       break;
-    case 'HARD':
+    case "hard":
       burnedCalories = 1000;
       break;
+      case "extreme":
+        burnedCalories = 1500;
+        break;
     default:
       burnedCalories = 300;
   }
+  console.log(calories);
 
-  const difference = totalIntake - burnedCalories;
+  const difference = calories - burnedCalories;
 
   const [showToast, setShowToast] = React.useState<boolean>(false);
+  const [toastMessage, setToastMessage] = React.useState<string>("");
+
 
   const handleButtonClick = (message: string) => {
+    setToastMessage(message);
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-    console.log(message);
+    setTimeout(() => setShowToast(false), 4000);
   };
 
   return (
@@ -59,7 +63,7 @@ const Calculator: React.FC<CalculatorProps> = ({ totalIntake, workoutLevel }) =>
       <IonContent>
         <h2>Calculate your calories</h2>
         <IonCardContent className="bodyContainer">
-        <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${totalIntake} calories today`)}>
+        <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${calories} calories today`)}>
           Shows days total calories intake
         </IonButton>
 
@@ -71,7 +75,12 @@ const Calculator: React.FC<CalculatorProps> = ({ totalIntake, workoutLevel }) =>
           Intake - Consumption difference
         </IonButton>
 
-        <IonToast isOpen={showToast} message={''} />
+        <IonToast
+            isOpen={showToast}
+            onDidDismiss={() => setShowToast(false)}
+            message={toastMessage}
+            duration={3000}
+          />
         </IonCardContent>
       </IonContent>
     </IonPage>
