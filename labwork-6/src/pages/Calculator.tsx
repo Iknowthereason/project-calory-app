@@ -12,7 +12,7 @@ import {
   IonIcon,
 } from '@ionic/react';
 import { menuOutline } from 'ionicons/icons';
-import { IIntensityState} from "../interfaces/interfaces";
+import {IIntensityState} from "../interfaces/interfaces";
 import {Meal} from "../pages/Intake";
  
 
