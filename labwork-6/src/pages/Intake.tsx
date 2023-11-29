@@ -7,7 +7,7 @@ export interface Meal {
   calories: number;
 }
 
-export const Intake: React.FC = () => {
+const Intake: React.FC = () => {
   const [mealTime, setMealTime] = useState<string>('');
   const [calories, setCalories] = useState<number | undefined>();
   const [meals, setMeals] = useState<Meal[]>([]);
