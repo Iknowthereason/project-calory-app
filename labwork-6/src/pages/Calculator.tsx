@@ -12,13 +12,12 @@ import {
   IonIcon,
 } from '@ionic/react';
 import { menuOutline } from 'ionicons/icons';
-import {IIntensityState} from "../interfaces/interfaces";
-import {Meal} from "../pages/Intake";
- 
+import { ICalculatorProps } from "../interfaces/interfaces";
 
-const Calculator: React.FC<IIntensityState & Meal> = ({ intensity, calories }) => {
+
+const Calculator: React.FC<ICalculatorProps> = ({ activityLevel, calories, caloryIntake }) => {
   let burnedCalories: number;
-  switch (intensity) {
+  switch (activityLevel) {
     case "low":
       burnedCalories = 500;
       break;
@@ -28,15 +27,15 @@ const Calculator: React.FC<IIntensityState & Meal> = ({ intensity, calories }) =
     case "hard":
       burnedCalories = 1000;
       break;
-      case "extreme":
-        burnedCalories = 1500;
-        break;
+    case "extreme":
+      burnedCalories = 1500;
+      break;
     default:
       burnedCalories = 300;
   }
-  console.log(calories);
+  const totCal = calories + burnedCalories;
 
-  const difference = calories - burnedCalories;
+  const difference = caloryIntake - totCal;
 
   const [showToast, setShowToast] = React.useState<boolean>(false);
   const [toastMessage, setToastMessage] = React.useState<string>("");
@@ -63,19 +62,19 @@ const Calculator: React.FC<IIntensityState & Meal> = ({ intensity, calories }) =
       <IonContent>
         <h2>Calculate your calories</h2>
         <IonCardContent className="bodyContainer">
-        <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${calories} calories today`)}>
-          Shows days total calories intake
-        </IonButton>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${caloryIntake} calories today`)}>
+            Shows days total calories intake
+          </IonButton>
 
-        <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have burned approximately ${burnedCalories} calories today`)}>
-          Show burned calories amount
-        </IonButton>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have burned approximately ${totCal} calories today`)}>
+            Show burned calories amount
+          </IonButton>
 
-        <IonButton expand="full" color="success" onClick={() => handleButtonClick(`Total intake consumption difference today: ${difference} kcal`)}>
-          Intake - Consumption difference
-        </IonButton>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`Total intake consumption difference today: ${difference} kcal`)}>
+            Intake - Consumption difference
+          </IonButton>
 
-        <IonToast
+          <IonToast
             isOpen={showToast}
             onDidDismiss={() => setShowToast(false)}
             message={toastMessage}
