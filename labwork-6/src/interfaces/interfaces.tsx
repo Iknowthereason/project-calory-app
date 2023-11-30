@@ -33,7 +33,7 @@ export interface IExerciseProps {
 
 export interface IWorkoutState {
   workout: {
-    id: Date
+    id: number
     intensity: IIntensityState["intensity"]
     duration: IWorkoutDurationState["duration"]
     calories: number
