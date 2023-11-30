@@ -1,5 +1,22 @@
-import { useEffect, useState } from "react";
-import { IonContent, IonPage, IonSelect, IonSelectOption, IonInput, IonLabel, IonButton, IonCardContent, IonItem, IonHeader, IonToolbar, IonTitle, IonList, IonItemSliding, IonItemOptions, IonItemOption } from '@ionic/react';
+import React, { useState } from "react";
+import {
+  IonContent,
+  IonPage,
+  IonSelect,
+  IonSelectOption,
+  IonInput,
+  IonLabel,
+  IonButton,
+  IonCardContent,
+  IonItem,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonList,
+  IonItemSliding,
+  IonItemOptions,
+  IonItemOption,
+} from '@ionic/react';
 import { IIntakeProps } from "../interfaces/interfaces";
 
 export interface Meal {
@@ -9,7 +26,6 @@ export interface Meal {
 }
 
 const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
-
   const [mealTime, setMealTime] = useState<string>('');
   const [calories, setCalories] = useState<number | undefined>();
   const [meals, setMeals] = useState<Meal[]>([]);
@@ -25,7 +41,8 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
 
       setMeals((prevMeals) => [...prevMeals, newMeal]);
       setTotalCalories((prevTotalCalories) => prevTotalCalories + (calories || 0));
-      setCaloryIntake(totalIntake);
+      setCaloryIntake((prevCaloryIntake) => prevCaloryIntake + (calories || 0));
+
       // Reset form fields
       setMealTime('');
       setCalories(undefined);
@@ -45,7 +62,6 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
       </IonHeader>
       <IonLabel> <h1 style={{ margin: "10px" }}> Put in your calory intake </h1> </IonLabel>
       <IonContent className="ion-padding">
-
         <IonCardContent className="bodyContainer">
           <IonItem color="success">
             <IonLabel position="stacked">Meal Time</IonLabel>
@@ -75,7 +91,6 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
             Submit
           </IonButton>
 
-          {/* Display submitted meals */}
           <IonList>
             {meals.map((meal) => (
               <IonItemSliding key={meal.id}>
@@ -87,11 +102,10 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
                   <IonItemOption onClick={() => handleDeleteMeal(meal.id)}>Delete</IonItemOption>
                 </IonItemOptions>
               </IonItemSliding>
-
             ))}
           </IonList>
+
         </IonCardContent>
-        {/* Display total calories */}
         <IonLabel>Total Calories: {totalIntake}</IonLabel>
       </IonContent>
     </IonPage>
