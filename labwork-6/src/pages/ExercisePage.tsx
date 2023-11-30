@@ -23,7 +23,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
     setCalories(sumOfCalories)
   }, [workouts])
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!intensity) {
       toast("Please enter exercise intensity level!", 5000)
       return
@@ -52,7 +52,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
   }
 
   const handleDeleteWorkout = (workoutId: number) => {
-    setWorkouts((workouts) => workouts.filter((workout) => workout.id !== workoutId));
+    setWorkouts(workouts.filter((workout) => workout.id !== workoutId));
   }
 
   return (
