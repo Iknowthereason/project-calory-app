@@ -19,19 +19,16 @@ const Calculator: React.FC<ICalculatorProps> = ({ activityLevel, calories, calor
   let burnedCalories: number;
   switch (activityLevel) {
     case "low":
-      burnedCalories = 500;
+      burnedCalories = 1200;
       break;
     case "medium":
-      burnedCalories = 700;
+      burnedCalories = 1600;
       break;
-    case "hard":
-      burnedCalories = 1000;
-      break;
-    case "extreme":
-      burnedCalories = 1500;
+    case "high":
+      burnedCalories = 2000;
       break;
     default:
-      burnedCalories = 300;
+      burnedCalories = 1600;
   }
   const totCal = calories + burnedCalories;
 
