@@ -12,7 +12,6 @@ const Register: React.FC = () => {
     const [toast] = useIonToast()
     const[busy, setBusy] = useState<boolean>(false)
     const router = useIonRouter()
-
     //Fix the register page by centering it and fix the register page to send registration to the database
     async function register() {
         //validation for registration

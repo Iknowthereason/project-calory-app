@@ -19,6 +19,8 @@ const Login: React.FC = () => {
     
         if (res) {
             toast('You have logged in!', 3000); // Set duration to 3000 milliseconds (3 seconds)
+            const UserData = await loginUser(username, password);
+            console.log(UserData);
             router.push('/app', 'root', 'replace')
             router.push('/app/login')
             router.push('/login', 'root', 'replace')

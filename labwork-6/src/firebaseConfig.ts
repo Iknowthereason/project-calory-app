@@ -4,8 +4,10 @@ import { loginUser as login, registerUser as register } from './firebaseConfig';
 import { toast } from './toast';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import{getFirestore, collection, getDocs} from 'firebase/firestore/lite';
 
-const config = {
+const FirebaseConfig = {
     apiKey: "AIzaSyD9t8s1SDbrKtNmQPpjJoXoM7rcCwTTx5k",
     authDomain: "labwork-6-d8640.firebaseapp.com",
     projectId: "labwork-6-d8640",
@@ -15,7 +17,13 @@ const config = {
     measurementId: "G-2MQY6LDHVK"
 }
 
-firebase.initializeApp(config);
+firebase.initializeApp(FirebaseConfig);
+
+const db = firebase.firestore();
+
+const colRef = db.collection('users');
+
+
 
 export async function loginUser(username:string, password: string) {
     const email = `${username}@ikanid.com`
@@ -36,9 +44,34 @@ export async function registerUser(username: string, password: string) {
 
     try {
         const res = await firebase.auth().createUserWithEmailAndPassword(email, password)
-        return res
-    } catch (error: any) {
-        toast(error.message, 4000)
+        console.log(res)
+
+        // Add a new document in collection "users" with ID 'username'
+        await db.collection('users').doc(username).set({
+            username: username,
+            email: email,
+            // add any other data you want to store here
+        })
+
+        return true
+    } catch (error) {
+        console.log(error)
         return false
+    }
+}
+
+export async function getUser(username: string) {
+    try {
+        const doc = await db.collection('users').doc(username).get();
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            return doc.data();
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+            return null;
+        }
+    } catch (error) {
+        console.log("Error getting document:", error);
     }
 }
