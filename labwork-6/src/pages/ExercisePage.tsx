@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonCol, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton, IonAlert, useIonToast } from "@ionic/react";
+import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonCol, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton, IonAlert, useIonToast, IonList, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonIcon } from "@ionic/react";
 import { IExerciseProps, IIntensityState, IUserProps, IWorkoutDurationState, IWorkoutState } from "../interfaces/interfaces";
+import { trashOutline } from "ionicons/icons";
 
 const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
   const [toast] = useIonToast()
@@ -22,34 +23,36 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
     setCalories(sumOfCalories)
   }, [workouts])
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!intensity) {
-      toast("Please enter exercise intensity level!", 2000)
+      toast("Please enter exercise intensity level!", 5000)
       return
     }
     if (!duration) {
-      toast("Please enter both, exercise hours and minutes!", 2000)
+      toast("Please enter both, exercise hours and minutes!", 5000)
+      return
+    }
+    if (!user.weight) {
+      toast("Users weight missing! Please enter your weight in the User Information.", 5000)
       return
     }
     
     let workoutCalories = parseInt(((duration.hours! * 60 + duration.minutes!) * caloryConsumptionFactor[intensity] * parseFloat(user.weight)).toFixed(0))
     console.log('workoutCalories:', workoutCalories)
       
-    setWorkouts([ ...workouts, { intensity: intensity, duration: { hours: duration.hours, minutes: duration.minutes }, calories: workoutCalories }])
-    
-
-    
-    
-    
+    setWorkouts([ ...workouts, { id: Date.now(), intensity: intensity, duration: { hours: duration.hours, minutes: duration.minutes }, calories: workoutCalories }])
     toast({
       message: `You have submitted ${duration.hours} hours of workout at ${intensity} 
       intensity level. You have burned ${workoutCalories} calories on this workout! `,
-      duration: 5000,
-      position: "middle"
+      duration: 3000,
+      position: "bottom"
     })
     setIntensity('')
     setDuration(undefined)
-    
+  }
+
+  const handleDeleteWorkout = (workoutId: number) => {
+    setWorkouts(workouts.filter((workout) => workout.id !== workoutId));
   }
 
   return (
@@ -71,7 +74,6 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
             <IonCardContent className="bodyContainer">
               <IonGrid>
                 <IonRow>
-                  
                   <IonCol size="12" color="background-color">
                     <IonButton id="workoutIntensity" color="light-green" expand="block">Workout intensity</IonButton>
                     <IonAlert
@@ -191,7 +193,32 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                     ></IonAlert>
                   </IonCol>
                 </IonRow>
-          
+                <IonRow>
+                  <IonCol>
+                  {workouts.length
+                    ?<IonList>
+                         {workouts.map((workout) => (
+                          <IonItemSliding key={workout.id}>
+                            <IonItem>
+                              <IonLabel>{workout.intensity} workout</IonLabel>
+                              <IonLabel slot="end">{workout.calories} calories</IonLabel>
+                              <IonButton slot="end" onClick={() => handleDeleteWorkout(workout.id)}>
+                                <IonIcon icon={trashOutline}></IonIcon>
+                              </IonButton>
+                            </IonItem>
+                            <IonItemOptions side="end">
+                              <IonItemOption onClick={() => handleDeleteWorkout(workout.id)}>Delete</IonItemOption>
+                            </IonItemOptions>
+                          </IonItemSliding>
+                        ))}
+                    
+                    </IonList>
+                    : <br/>
+                  }
+
+                    
+                  </IonCol>
+                </IonRow>
               </IonGrid>
             </IonCardContent>
           </IonCard>

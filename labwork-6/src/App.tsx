@@ -44,9 +44,10 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () =>  {
-  const [user, setUser] = useState<IUserState>({ age: "", height: "", weight:"", activityLevel: "", medicalProblems: true })
+const App: React.FC = () => {
+  const [user, setUser] = useState<IUserState>({ age: "", height: "", weight: "", activityLevel: "", medicalProblems: true })
   const [calories, setCalories] = useState<number>(0)
+  const [caloryIntake, setCaloryIntake] = useState<number>(0)
 
   return (
     <IonApp>
@@ -58,11 +59,11 @@ const App: React.FC = () =>  {
               <Route path="/login" component={Login} exact />
               <Redirect from="/" to="/login" exact />
               <Route path="/register" component={Register} exact />
-              <Route path="/exercise-page" render={()=><ExercisePage user={user} setCalories={setCalories}/>} exact />
-              <Route path="/calculator" component={Calculator} exact />
-              <Route exact path="/user-info" render={()=><UserInfoPage user={user} setUser={setUser}/>} />
-              <Route path="/intake" component={Intake} exact />
-            
+              <Route path="/exercise-page" render={() => <ExercisePage user={user} setCalories={setCalories} />} exact />
+              <Route path="/calculator" render={() => <Calculator calories={calories} activityLevel={user.activityLevel} caloryIntake={caloryIntake} />} exact />
+              <Route exact path="/user-info" render={() => <UserInfoPage user={user} setUser={setUser} />} />
+              <Route path="/intake" render={() => <Intake setCaloryIntake={setCaloryIntake} />} exact />
+
             </IonRouterOutlet>
           </IonSplitPane>
         </IonRouterOutlet>

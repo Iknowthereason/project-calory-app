@@ -33,6 +33,7 @@ export interface IExerciseProps {
 
 export interface IWorkoutState {
   workout: {
+    id: number
     intensity: IIntensityState["intensity"]
     duration: IWorkoutDurationState["duration"]
     calories: number
@@ -40,6 +41,7 @@ export interface IWorkoutState {
   
   setWorkouts: React.Dispatch<React.SetStateAction<IWorkoutState["workout"]>>
 }
+
 
 export interface IIntensityState {
   intensity: "low" | "medium" | "hard" | "extreme" | "",
@@ -52,4 +54,17 @@ export interface IWorkoutDurationState {
     minutes: number | undefined
   }
   setDuration: React.Dispatch<React.SetStateAction<IWorkoutDurationState["duration"]>>
+}
+
+// Calculator page
+export interface ICalculatorProps {
+  activityLevel: string
+  calories: number
+  caloryIntake: number
+}
+
+//Intake page
+
+export interface IIntakeProps {
+  setCaloryIntake: React.Dispatch<React.SetStateAction<number>>
 }
