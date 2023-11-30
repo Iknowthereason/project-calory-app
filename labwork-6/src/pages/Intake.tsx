@@ -1,24 +1,7 @@
-import React, { useState } from 'react';
-import {
-  IonContent,
-  IonPage,
-  IonSelect,
-  IonSelectOption,
-  IonInput,
-  IonLabel,
-  IonButton,
-  IonCardContent,
-  IonItem,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonList,
-  IonItemSliding,
-  IonItemOptions,
-  IonItemOption,
-} from '@ionic/react';
+import { useEffect, useState } from "react";
+import {IonContent, IonPage, IonSelect, IonSelectOption, IonInput, IonLabel, IonButton, IonCardContent, IonItem, IonHeader, IonToolbar, IonTitle, IonList, IonItemSliding, IonItemOptions, IonItemOption} from '@ionic/react';
 
-interface Meal {
+export interface Meal {
   id: number;
   mealTime: string;
   calories: number;
@@ -114,6 +97,3 @@ const Intake: React.FC = () => {
 };
 
 export default Intake;
-
-
-
