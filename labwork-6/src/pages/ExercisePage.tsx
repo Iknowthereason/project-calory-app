@@ -24,11 +24,15 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
 
   const handleSubmit = async () => {
     if (!intensity) {
-      toast("Please enter exercise intensity level!", 2000)
+      toast("Please enter exercise intensity level!", 5000)
       return
     }
     if (!duration) {
-      toast("Please enter both, exercise hours and minutes!", 2000)
+      toast("Please enter both, exercise hours and minutes!", 5000)
+      return
+    }
+    if (!user.weight) {
+      toast("Users weight missing! Please enter your weight in the User Information.", 5000)
       return
     }
     
@@ -36,11 +40,6 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
     console.log('workoutCalories:', workoutCalories)
       
     setWorkouts([ ...workouts, { intensity: intensity, duration: { hours: duration.hours, minutes: duration.minutes }, calories: workoutCalories }])
-    
-
-    
-    
-    
     toast({
       message: `You have submitted ${duration.hours} hours of workout at ${intensity} 
       intensity level. You have burned ${workoutCalories} calories on this workout! `,
