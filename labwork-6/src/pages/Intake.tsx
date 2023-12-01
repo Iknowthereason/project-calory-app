@@ -16,6 +16,8 @@ import {
   IonItemSliding,
   IonItemOptions,
   IonItemOption,
+  IonButtons,
+  IonMenuButton,
 } from '@ionic/react';
 import { IIntakeProps } from "../interfaces/interfaces";
 
@@ -57,6 +59,9 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+          <IonMenuButton></IonMenuButton>
+        </IonButtons>
           <IonTitle>Calory Intake</IonTitle>
         </IonToolbar>
       </IonHeader>

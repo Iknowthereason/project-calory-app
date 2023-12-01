@@ -11,6 +11,8 @@ import {
   IonButton,
   IonIcon,
   IonCardContent,
+  IonMenuButton,
+  IonButtons,
 } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import { menuOutline } from 'ionicons/icons';
@@ -19,11 +21,9 @@ const SideMenu: React.FC = () => (
   <IonMenu contentId="main" type="overlay">
     <IonHeader>
       <IonToolbar>
-        <IonMenuToggle slot="start">
-          <IonButton>
-            <IonIcon icon={menuOutline} />
-          </IonButton>
-        </IonMenuToggle>
+        <IonButtons slot="start">
+          <IonMenuButton></IonMenuButton>
+        </IonButtons>
         <IonTitle>Menu</IonTitle>
       </IonToolbar>
     </IonHeader>
