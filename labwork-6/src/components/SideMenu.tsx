@@ -7,15 +7,10 @@ import {
   IonContent,
   IonList,
   IonItem,
-  IonMenuToggle,
-  IonButton,
-  IonIcon,
   IonCardContent,
   IonMenuButton,
   IonButtons,
 } from '@ionic/react';
-import { Link } from 'react-router-dom';
-import { menuOutline } from 'ionicons/icons';
 
 const SideMenu: React.FC = () => (
   <IonMenu contentId="main" type="overlay">

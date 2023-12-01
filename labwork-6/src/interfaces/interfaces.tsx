@@ -38,7 +38,7 @@ export interface IWorkoutState {
     duration: IWorkoutDurationState["duration"]
     calories: number
   }[]
-  
+
   setWorkouts: React.Dispatch<React.SetStateAction<IWorkoutState["workout"]>>
 }
 

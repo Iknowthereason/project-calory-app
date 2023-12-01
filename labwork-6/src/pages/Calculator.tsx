@@ -7,13 +7,10 @@ import {
   IonToolbar,
   IonButton,
   IonToast,
-  IonMenuToggle,
   IonCardContent,
-  IonIcon,
   IonMenuButton,
   IonButtons,
 } from '@ionic/react';
-import { menuOutline } from 'ionicons/icons';
 import { ICalculatorProps } from "../interfaces/interfaces";
 
 
@@ -50,9 +47,9 @@ const Calculator: React.FC<ICalculatorProps> = ({ activityLevel, calories, calor
     <IonPage>
       <IonHeader>
         <IonToolbar>
-        <IonButtons slot="start">
-              <IonMenuButton></IonMenuButton>
-            </IonButtons>
+          <IonButtons slot="start">
+            <IonMenuButton></IonMenuButton>
+          </IonButtons>
           <IonTitle>Calculator</IonTitle>
         </IonToolbar>
       </IonHeader>

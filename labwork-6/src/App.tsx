@@ -1,19 +1,13 @@
-import { Router, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonSplitPane,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
   setupIonicReact
 } from '@ionic/react';
-import { ICaloriesState, IUserState } from './interfaces/interfaces'
+import { IUserState } from './interfaces/interfaces'
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
 import Calculator from './pages/Calculator';
 import SideMenu from './components/SideMenu';
 import UserInfoPage from './pages/UserInfoPage';

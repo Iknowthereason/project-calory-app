@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonCol, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton, IonAlert, useIonToast, IonList, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonIcon } from "@ionic/react";
-import { IExerciseProps, IIntensityState, IUserProps, IWorkoutDurationState, IWorkoutState } from "../interfaces/interfaces";
+import { IExerciseProps, IIntensityState, IWorkoutDurationState, IWorkoutState } from "../interfaces/interfaces";
 import { trashOutline } from "ionicons/icons";
 
 const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
@@ -14,7 +14,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
     medium: 0.087,
     hard: 0.126,
     extreme: 0.157
-   }
+  }
 
   useEffect(() => {
     let sumOfCalories = 0
@@ -36,11 +36,11 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
       toast("Users weight missing! Please enter your weight in the User Information.", 5000)
       return
     }
-    
+
     let workoutCalories = parseInt(((duration.hours! * 60 + duration.minutes!) * caloryConsumptionFactor[intensity] * parseFloat(user.weight)).toFixed(0))
     console.log('workoutCalories:', workoutCalories)
-      
-    setWorkouts([ ...workouts, { id: Date.now(), intensity: intensity, duration: { hours: duration.hours, minutes: duration.minutes }, calories: workoutCalories }])
+
+    setWorkouts([...workouts, { id: Date.now(), intensity: intensity, duration: { hours: duration.hours, minutes: duration.minutes }, calories: workoutCalories }])
     toast({
       message: `You have submitted ${duration.hours} hours of workout at ${intensity} 
       intensity level. You have burned ${workoutCalories} calories on this workout! `,
@@ -82,14 +82,14 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       buttons={[
                         {
                           text: 'CANCEL',
-                          role: 'cancel',                        
+                          role: 'cancel',
                         },
                         {
                           text: 'OK',
                           role: 'confirm',
                           handler: (data) => setIntensity(data)
                         }]}
-                      
+
                       inputs={[
                         {
                           label: 'Low',
@@ -114,7 +114,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       ]}
                     ></IonAlert>
                   </IonCol>
-                  <IonCol size="12"  color="background-color">
+                  <IonCol size="12" color="background-color">
                     <IonButton id="workoutHours" color="light-green" expand="block">Workout hours</IonButton>
                     <IonAlert
                       trigger="workoutHours"
@@ -122,11 +122,11 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       buttons={[
                         {
                           text: 'CANCEL',
-                          role: 'cancel',                        
+                          role: 'cancel',
                         },
                         {
                           text: 'OK',
-                          role: 'confirm',   
+                          role: 'confirm',
                           handler: (data) => {
                             if (!data.durationHours) {
                               data.durationHours = 0
@@ -138,7 +138,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                           }
                         }
                       ]}
-                  
+
                       inputs={[
                         {
                           label: "Hours",
@@ -161,10 +161,10 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       ]}
                     ></IonAlert>
                   </IonCol>
-                  <IonCol size="12"  color="background-color">
+                  <IonCol size="12" color="background-color">
                     <IonButton expand="block" onClick={handleSubmit}>Submit workout</IonButton>
                   </IonCol>
-                  <IonCol size="12"  color="background-color">
+                  <IonCol size="12" color="background-color">
                     <IonButton id="recommendedExercise" color="light-green" expand="block">Recommended exercise</IonButton>
                     <IonAlert
                       trigger="recommendedExercise"
@@ -173,12 +173,12 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       buttons={[
                         {
                           text: "OK",
-                          role:"cancel"
+                          role: "cancel"
                         }
                       ]}
                     ></IonAlert>
                   </IonCol>
-                  <IonCol size="12"  color="background-color">
+                  <IonCol size="12" color="background-color">
                     <IonButton id="recommendedFoodType" color="light-green" expand="block">Recommended food type</IonButton>
                     <IonAlert
                       trigger="recommendedFoodType"
@@ -187,7 +187,7 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                       buttons={[
                         {
                           text: "OK",
-                          role:"cancel"
+                          role: "cancel"
                         }
                       ]}
                     ></IonAlert>
@@ -195,9 +195,9 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                 </IonRow>
                 <IonRow>
                   <IonCol>
-                  {workouts.length
-                    ?<IonList>
-                         {workouts.map((workout) => (
+                    {workouts.length
+                      ? <IonList>
+                        {workouts.map((workout) => (
                           <IonItemSliding key={workout.id}>
                             <IonItem>
                               <IonLabel>{workout.intensity} workout</IonLabel>
@@ -211,12 +211,12 @@ const ExercisePage: React.FC<IExerciseProps> = ({ user, setCalories }) => {
                             </IonItemOptions>
                           </IonItemSliding>
                         ))}
-                    
-                    </IonList>
-                    : <br/>
-                  }
 
-                    
+                      </IonList>
+                      : <br />
+                    }
+
+
                   </IonCol>
                 </IonRow>
               </IonGrid>

@@ -1,9 +1,9 @@
-import { FunctionComponent, useState, useCallback, MouseEvent } from "react";
+import { useState } from "react";
 import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonInput, IonCol, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton } from "@ionic/react";
 import { IUserProps, IUserInfoState } from '../interfaces/interfaces'
 const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {
-  
-  const [userInfo, setUserInfo] = useState<IUserInfoState>({ age: "", height: "", weight:"", activityLevel: "", medicalProblems: false })
+
+  const [userInfo, setUserInfo] = useState<IUserInfoState>({ age: "", height: "", weight: "", activityLevel: "", medicalProblems: false })
 
   const handleChange = (event: any) => {
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
@@ -15,9 +15,9 @@ const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {
 
   const handleSave = () => {
     setUser(userInfo)
-    
+
   }
-  
+
   return (
     <>
       <IonPage>
@@ -51,36 +51,36 @@ const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {
                     ></IonInput>
                   </IonCol>
                 </IonRow>
-                  <IonRow>
-                    <IonCol color="background-color">
-                      <IonLabel>Height (cm)</IonLabel>
-                      <IonInput
-                        type="number"
-                        className="input" 
-                        labelPlacement="stacked" 
-                        fill="outline" 
-                        placeholder="Enter Height"
-                        value={userInfo.height.toString()}
-                        onIonChange={handleChange}
-                        name="height">
-                      </IonInput>
-                    </IonCol>
-                  </IonRow>
-                  <IonRow>
-                    <IonCol color="background-color">
-                      <IonLabel>Weight (kg)</IonLabel>
-                        <IonInput
-                          type="number" 
-                          className="input" 
-                          labelPlacement="stacked" 
-                          fill="outline"  
-                          placeholder="Enter Weight"
-                          value={userInfo.weight.toString()}
-                          onIonChange={handleChange}
-                          name="weight">
-                      </IonInput>
-                    </IonCol >
-                  </IonRow>
+                <IonRow>
+                  <IonCol color="background-color">
+                    <IonLabel>Height (cm)</IonLabel>
+                    <IonInput
+                      type="number"
+                      className="input"
+                      labelPlacement="stacked"
+                      fill="outline"
+                      placeholder="Enter Height"
+                      value={userInfo.height.toString()}
+                      onIonChange={handleChange}
+                      name="height">
+                    </IonInput>
+                  </IonCol>
+                </IonRow>
+                <IonRow>
+                  <IonCol color="background-color">
+                    <IonLabel>Weight (kg)</IonLabel>
+                    <IonInput
+                      type="number"
+                      className="input"
+                      labelPlacement="stacked"
+                      fill="outline"
+                      placeholder="Enter Weight"
+                      value={userInfo.weight.toString()}
+                      onIonChange={handleChange}
+                      name="weight">
+                    </IonInput>
+                  </IonCol >
+                </IonRow>
                 <IonRow>
                   <IonCol>
                     <IonText>
