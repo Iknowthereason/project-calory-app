@@ -45,14 +45,21 @@ const Intake: React.FC<IIntakeProps> = ({ setCaloryIntake }) => {
       setTotalCalories((prevTotalCalories) => prevTotalCalories + (calories || 0));
       setCaloryIntake((prevCaloryIntake) => prevCaloryIntake + (calories || 0));
 
-      // Reset form fields
       setMealTime('');
       setCalories(undefined);
     }
   };
 
   const handleDeleteMeal = (mealId: number) => {
-    setMeals((prevMeals) => prevMeals.filter((meal) => meal.id !== mealId));
+    const deletedMeal = meals.find((meal) => meal.id === mealId);
+
+    if (deletedMeal) {
+      setMeals((prevMeals) => prevMeals.filter((meal) => meal.id !== mealId));
+
+      setTotalCalories((prevTotalCalories) => prevTotalCalories - deletedMeal.calories);
+
+      setCaloryIntake((prevCaloryIntake) => prevCaloryIntake - deletedMeal.calories);
+    }
   };
 
   return (
