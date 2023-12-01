@@ -60,7 +60,7 @@ const Calculator: React.FC<ICalculatorProps> = ({ activityLevel, calories, calor
             Shows days total calories intake
           </IonButton>
 
-          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have burned approximately ${totCal} calories today`)}>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`By the end of the day you burned approximately ${totCal} calories today`)}>
             Show burned calories amount
           </IonButton>
 
