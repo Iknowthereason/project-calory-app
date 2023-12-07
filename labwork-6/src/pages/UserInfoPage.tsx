@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IonButton, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonInput, IonCol, IonList, IonPage, IonRow, IonTitle, IonToolbar, IonText, IonRadio, IonRadioGroup, IonLabel, IonSegment, IonSegmentButton, IonButtons, IonMenuButton } from "@ionic/react";
 import { IUserProps, IUserInfoState } from '../interfaces/interfaces'
-const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {
+import { getUser, saveUserInformation } from "../firebaseConfig";
+import { construct } from "ionicons/icons";
 
-  const [userInfo, setUserInfo] = useState<IUserInfoState>({ age: "", height: "", weight: "", activityLevel: "", medicalProblems: false })
+const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {  
+  const [userInfo, setUserInfo] = useState<IUserInfoState>({age: "", height: "", weight: "", activityLevel: "", medicalProblems: false })
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      console.log("fetcing user data", user)
+      if (user.username !== "") {
+        const data = await getUser(user)
+        if (data !== null && data !== undefined) {
+          setUserInfo({ age: data?.age, height: data?.height, weight: data?.weight, activityLevel: data?.activityLevel, medicalProblems: data?.medicalProblems })
+          setUser({ ...user, age: data?.age, height: data?.height, weight: data?.weight, activityLevel: data?.activityLevel, medicalProblems: data?.medicalProblems })
+        }
+      }
+    }
+
+    fetchUserData()
+        
+  }, [user.username])
 
   const handleChange = (event: any) => {
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
@@ -14,7 +32,8 @@ const UserInfoPage: React.FC<IUserProps> = ({ user, setUser }) => {
   }
 
   const handleSave = () => {
-    setUser(userInfo)
+    setUser({ ...user, age: userInfo.age, weight: userInfo.weight, height: userInfo.height, activityLevel: userInfo.activityLevel, medicalProblems: userInfo.medicalProblems })
+    saveUserInformation(user.username!, userInfo)
 
   }
 
