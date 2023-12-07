@@ -56,15 +56,15 @@ const Calculator: React.FC<ICalculatorProps> = ({ activityLevel, calories, calor
       <IonContent>
         <h2>Calculate your calories</h2>
         <IonCardContent className="bodyContainer">
-          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${caloryIntake} calories today`)}>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`You have taken ${caloryIntake} calories today.`)}>
             Shows days total calories intake
           </IonButton>
 
-          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`By the end of the day you burned approximately ${totCal} calories today`)}>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`By the end of the day, you have burned approximately ${totCal} calories.`)}>
             Show burned calories amount
           </IonButton>
 
-          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`Total intake consumption difference today: ${difference} kcal`)}>
+          <IonButton expand="full" color="success" onClick={() => handleButtonClick(`Total intake consumption difference today: ${difference} kcal.`)}>
             Intake - Consumption difference
           </IonButton>
 
