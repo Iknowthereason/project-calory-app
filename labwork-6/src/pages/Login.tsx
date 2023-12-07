@@ -2,8 +2,9 @@ import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolb
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { loginUser } from '../firebaseConfig';
+import { IUserProps } from '../interfaces/interfaces';
 
-const Login: React.FC = () => {
+const Login: React.FC<IUserProps> = ({ user, setUser }) => {
     const [busy, setBusy] = useState<boolean>(false)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -19,11 +20,12 @@ const Login: React.FC = () => {
         if (res) {
             toast('You have logged in!', 3000); // Set duration to 3000 milliseconds (3 seconds)
             const UserData = await loginUser(username, password);
+            setUser({...user, username: username })
             console.log(UserData);
             router.push('/user-info', 'root', 'replace')
             router.push('/user-info', 'root', 'push')
         } else {
-            toast('Wrong user information. Don\'t have an account?')
+            toast('Wrong user information. Don\'t have an account?', 3000)
         }
         setBusy(false)
     }
