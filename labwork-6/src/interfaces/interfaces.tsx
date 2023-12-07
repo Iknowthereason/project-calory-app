@@ -1,9 +1,10 @@
 /* App */
 export interface IUserState {
+  username?: string
   age: string
   height: string
   weight: string
-  activityLevel: "low" | "medium" | "high" | ""
+  activityLevel?: "low" | "medium" | "high" | ""
   medicalProblems: boolean
 }
 
@@ -11,7 +12,7 @@ export interface ICaloriesState {
   calories: string
 }
 
-/* UserInfoPage */
+/* UserInfoPage, Login */
 export interface IUserInfoState {
   age: string
   height: string
@@ -21,8 +22,8 @@ export interface IUserInfoState {
 }
 
 export interface IUserProps {
-  user: IUserInfoState
-  setUser: React.Dispatch<React.SetStateAction<IUserInfoState>>
+  user: IUserState
+  setUser: React.Dispatch<React.SetStateAction<IUserState>>
 }
 
 /* ExcercisePage */
