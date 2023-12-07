@@ -10,6 +10,7 @@ import {
   IonCardContent,
   IonMenuButton,
   IonButtons,
+  IonMenuToggle,
 } from '@ionic/react';
 
 const SideMenu: React.FC = () => (
@@ -25,24 +26,34 @@ const SideMenu: React.FC = () => (
     <IonContent>
       <IonCardContent className="bodyContainer">
         <IonList color="success">
-          <IonItem button routerLink="/intake" color="success">
-            Calory Intake
-          </IonItem>
-          <IonItem button routerLink="/exercise-page" color="success">
-            Exercise Page
-          </IonItem>
-          <IonItem button routerLink="/calculator" color="success">
-            Calculator
-          </IonItem>
-          <IonItem button routerLink="/user-info" color="success">
-            User Information
-          </IonItem>
+          <IonMenuToggle>
+            <IonItem button routerLink="/intake" color="success">
+              Calory Intake
+            </IonItem>
+          </IonMenuToggle>
+          <IonMenuToggle>
+            <IonItem button routerLink="/exercise-page" color="success">
+              Exercise Page
+            </IonItem>
+          </IonMenuToggle>
+          <IonMenuToggle>
+            <IonItem button routerLink="/calculator" color="success">
+              Calculator
+            </IonItem>
+          </IonMenuToggle>
+          <IonMenuToggle>
+            <IonItem button routerLink="/user-info" color="success">
+              User Information
+            </IonItem>
+          </IonMenuToggle>
         </IonList>
       </IonCardContent>
       <IonCardContent className="bodyContainer">
-        <IonItem button routerLink="/login" color="primary">
-          Log Out
-        </IonItem>
+        <IonMenuToggle>
+          <IonItem button routerLink="/login" color="primary">
+            Log Out
+          </IonItem>
+        </IonMenuToggle>
       </IonCardContent>
     </IonContent>
   </IonMenu>
