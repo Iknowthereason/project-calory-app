@@ -6,6 +6,8 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import{getFirestore, collection, getDocs} from 'firebase/firestore/lite';
+import { IUserInfoState, IUserState } from './interfaces/interfaces';
+import { doc, updateDoc } from "firebase/firestore";
 
 const FirebaseConfig = {
     apiKey: "AIzaSyD9t8s1SDbrKtNmQPpjJoXoM7rcCwTTx5k",
@@ -50,7 +52,11 @@ export async function registerUser(username: string, password: string) {
         await db.collection('users').doc(username).set({
             username: username,
             email: email,
-            // add any other data you want to store here
+            age: "",
+            height: "",
+            weight: "",
+            activityLevel: "",
+            medicalProblems: ""
         })
 
         return true
@@ -60,18 +66,49 @@ export async function registerUser(username: string, password: string) {
     }
 }
 
-export async function getUser(username: string) {
+export async function getUser(user: IUserState) {
     try {
-        const doc = await db.collection('users').doc(username).get();
+        const doc = await db.collection('users').doc(user.username).get();
         if (doc.exists) {
             console.log("Document data:", doc.data());
-            return doc.data();
+            const result = doc.data()
+            const userInfo = {
+              age: result?.age,
+              height: result?.height,
+              weight: result?.weight,
+              activityLevel: result?.activityLevel,
+              medicalProblems: result?.medicalProblems
+            }
+            return userInfo ;
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
             return null;
+            
         }
     } catch (error) {
         console.log("Error getting document:", error);
     }
+}
+
+export const saveUserInformation = async (username: string, user: IUserInfoState) => {
+  console.log( "age:", user.age,
+    "height:", user.height,
+    "weight:", user.weight,
+    "activityLevel:", user.activityLevel, 
+    "medicalProblems:", user.medicalProblems)
+  try {
+    await db.collection('users').doc(username).update({
+      age: user.age,
+      height: user.height,
+      weight: user.weight,
+      activityLevel: user.activityLevel,
+      medicalProblems: user.medicalProblems
+      })
+    console.log("Document successfully updated!")
+  }
+  catch (error) {
+    console.log(error)
+  }
+
 }
