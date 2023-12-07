@@ -1,5 +1,5 @@
 import { Route, Redirect } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   IonApp,
   IonRouterOutlet,
@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ExercisePage from './pages/ExercisePage';
 import Intake from './pages/Intake';
+import { getUser } from './firebaseConfig';
 
 /* Core CSS required for Ionic components to work properly  */
 import '@ionic/react/css/core.css';
@@ -36,10 +37,11 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 
+
 setupIonicReact();
 
 const App: React.FC = () => {
-  const [user, setUser] = useState<IUserState>({ age: "", height: "", weight: "", activityLevel: "", medicalProblems: true })
+  const [user, setUser] = useState<IUserState>({username: "", age: "", height: "", weight: "", activityLevel: "", medicalProblems: true })
   const [calories, setCalories] = useState<number>(0)
   const [caloryIntake, setCaloryIntake] = useState<number>(0)
 
@@ -50,11 +52,11 @@ const App: React.FC = () => {
           <IonSplitPane contentId="main">
             <SideMenu />
             <IonRouterOutlet id="main">
-              <Route path="/login" component={Login} exact />
+              <Route path="/login" render={() => <Login user={user} setUser={setUser} />} exact />
               <Redirect from="/" to="/login" exact />
               <Route path="/register" component={Register} exact />
               <Route path="/exercise-page" render={() => <ExercisePage user={user} setCalories={setCalories} />} exact />
-              <Route path="/calculator" render={() => <Calculator calories={calories} activityLevel={user.activityLevel} caloryIntake={caloryIntake} />} exact />
+              <Route path="/calculator" render={() => <Calculator calories={calories} activityLevel={user.activityLevel!} caloryIntake={caloryIntake} />} exact />
               <Route exact path="/user-info" render={() => <UserInfoPage user={user} setUser={setUser} />} />
               <Route path="/intake" render={() => <Intake setCaloryIntake={setCaloryIntake} />} exact />
 
